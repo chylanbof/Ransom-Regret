@@ -57,6 +57,8 @@ public class EventHandler {
         eventMaster.dialogues[2][0] = "¡Te tropezaste con una bonita piedra!";
 
         eventMaster.dialogues[3][0] = "El portal te ha llevado a otro lugar...";
+
+        eventMaster.dialogues[4][0] = "Ya no hay vuelta atrás.";
     }
     public void checkEvent() {
 
@@ -93,11 +95,29 @@ public class EventHandler {
             else if(hit(4,17,23, "any")) {teleport(5, 9,40, gp.dungeon); gp.stopMusic(); gp.playMusic(47);}
             else if(hit(5,9,41, "any")) {teleport(4, 17,24, gp.dungeon); gp.stopMusic();}
             else if(hit(5, 20, 22, "any")) {teleport(6,23,47, gp.dungeon); gp.stopMusic(); gp.playMusic(17);}
-            else if(hit(6, 24, 47, "any")) {teleport(5, 21, 22, gp.dungeon); gp.stopMusic(); gp.playMusic(47);}
+            else if(hit(6, 24, 47, "any")) {
+                if(isLocker2Active()) {
+                    teleport(5, 21, 22, gp.dungeon);
+                    gp.stopMusic();
+                    gp.playMusic(47);
+                } else {
+                    mensajeOminoso(gp.dialogueState);
+                    canTouchEvent = false;
+                    previousEventX = gp.player.worldX;
+                    previousEventY = gp.player.worldY;
+                }
+            }
+            }
 
 
         }
+
+
+    public void mensajeOminoso(int gameState) {
+        gp.gameState = gameState;
+        eventMaster.startDialogue(eventMaster, 4);
     }
+
 
     public boolean hit(int map, int col, int row, String reqDirection) {
 
@@ -208,5 +228,15 @@ public class EventHandler {
             gp.player.attackCanceled = true;
             entity.speak();
         }
+    }
+    public boolean isLocker2Active() {
+        if (gp.obj[6] != null) {
+            for (Entity e : gp.obj[6]) {
+                if (e != null && "Cerradura2".equals(e.name)) {
+                    return true; // Aún está presente
+                }
+            }
+        }
+        return false; // No está en el mapa
     }
 }
