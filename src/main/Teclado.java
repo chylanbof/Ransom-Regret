@@ -14,7 +14,7 @@ public class Teclado implements KeyListener {
     public boolean upPressed, downPressed, leftPressed, rightPressed, enterPressed, shotKeyPressed, spacePressed;
     //DEBUG
     public boolean showDebugText = false;
-    public String tipoSeleccionado;
+    public boolean godModeOn = false;
 
 
     public Teclado(GamePanel gp) {
@@ -238,6 +238,9 @@ public class Teclado implements KeyListener {
                 if (code == KeyEvent.VK_T) {
                     showDebugText = !showDebugText;
                 }
+            if (code == KeyEvent.VK_G) {
+                godModeOn = !godModeOn;
+            }
             }
         public void pauseState (int code) {
             if (code != KeyEvent.VK_BACK_SPACE) {

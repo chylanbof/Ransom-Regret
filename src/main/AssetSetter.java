@@ -156,6 +156,11 @@ public class AssetSetter {
         gp.npc[mapNum][i] = new NPC_Bradney_2(gp);
         gp.npc[mapNum][i].worldX = gp.tileSize*23;
         gp.npc[mapNum][i].worldY = gp.tileSize*40;
+        i++;
+        gp.npc[mapNum][i] = new NPC_Bradney_3(gp);
+        gp.npc[mapNum][i].worldX = gp.tileSize*24;
+        gp.npc[mapNum][i].worldY = gp.tileSize*26;
+
 
     }
 
@@ -331,6 +336,18 @@ public class AssetSetter {
         gp.monster[mapNum][i] = new MON_Vigilux(gp);
         gp.monster[mapNum][i].worldX = gp.tileSize*23;
         gp.monster[mapNum][i].worldY = gp.tileSize*31;
+        i++;
+        gp.monster[mapNum][i] = new MON_Boss(gp);
+        gp.monster[mapNum][i].worldX = gp.tileSize*26;
+        gp.monster[mapNum][i].worldY = gp.tileSize*5;
+        i++;
+        gp.monster[mapNum][i] = new MON_MiniVigilux(gp);
+        gp.monster[mapNum][i].worldX = gp.tileSize*22;
+        gp.monster[mapNum][i].worldY = gp.tileSize*7;
+        i++;
+        gp.monster[mapNum][i] = new MON_MiniVigilux(gp);
+        gp.monster[mapNum][i].worldX = gp.tileSize*32;
+        gp.monster[mapNum][i].worldY = gp.tileSize*7;
 
     }
     public void setInteractiveTile() {

@@ -107,7 +107,9 @@ public class EventHandler {
                     previousEventY = gp.player.worldY;
                 }
             }
-            }
+            else if(hit(6, 29, 26, "any")) {teleport(6,26,13, gp.dungeon); gp.stopMusic(); gp.playMusic(50);}
+
+        }
 
 
         }
