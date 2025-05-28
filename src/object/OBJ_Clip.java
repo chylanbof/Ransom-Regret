@@ -43,6 +43,7 @@ public class OBJ_Clip extends Entity {
 
         } else if (objIndex2 != 999) {
             startDialogue(this, 0);
+            gp.playSE(34);
             gp.stopMusic();
             gp.playMusic(49);
             System.out.println("Cerradura2 usada. Reproduciendo música 49.");
