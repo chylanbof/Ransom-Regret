@@ -1,10 +1,7 @@
 package main;
 
-import entity.NPC_Billson;
-import entity.NPC_Bradney;
-import entity.NPC_Guardarin;
+import entity.*;
 import entity.NPC_Rosa.*;
-import entity.NPC_Tarta;
 import monster.*;
 import object.*;
 import tile_interactive.IT_BreakableRock;
@@ -95,6 +92,12 @@ public class AssetSetter {
         gp.obj[mapNum][i] = new OBJ_Boss_Door(gp);
         gp.obj[mapNum][i].worldX = gp.tileSize*21;
         gp.obj[mapNum][i].worldY = gp.tileSize*22;
+        mapNum = 6;
+        gp.obj[mapNum][i] = new OBJ_Locker(gp);
+        gp.obj[mapNum][i].worldX = gp.tileSize*24;
+        gp.obj[mapNum][i].worldY = gp.tileSize*40;
+        i++;
+
 
 
     }
@@ -143,6 +146,11 @@ public class AssetSetter {
         gp.npc[mapNum][i] = new NPC_Tarta(gp);
         gp.npc[mapNum][i].worldX = gp.tileSize*24;
         gp.npc[mapNum][i].worldY = gp.tileSize*28;
+        i++;
+        gp.npc[mapNum][i] = new NPC_Bradney_2(gp);
+        gp.npc[mapNum][i].worldX = gp.tileSize*23;
+        gp.npc[mapNum][i].worldY = gp.tileSize*40;
+
     }
 
     public void setMonster() {
@@ -313,6 +321,11 @@ public class AssetSetter {
         gp.monster[mapNum][i].worldX = gp.tileSize*30;
         gp.monster[mapNum][i].worldY = gp.tileSize*9;
         i++;
+        mapNum = 6;
+        gp.monster[mapNum][i] = new MON_Vigilux(gp);
+        gp.monster[mapNum][i].worldX = gp.tileSize*23;
+        gp.monster[mapNum][i].worldY = gp.tileSize*31;
+
     }
     public void setInteractiveTile() {
         int mapNum = 0;
