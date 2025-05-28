@@ -1,0 +1,6 @@
+Después de cerrar el inventario, cambiar de zona del mapa o terminar de hablar con Billson, el juego se acelera muchísimo.
+Hay algunos diálogos bugeados si lo primero que haces al entrar al juego es cargar la partida directamente.
+Se pueden vender cosas importantes para el avanze del juego y te puedes softlockear.
+El parry no esta bien implementado.
+El anti knockback en los enemigos ha dejado de funcionar.
+El path finding a veces se bugea.
