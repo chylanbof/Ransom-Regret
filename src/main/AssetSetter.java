@@ -4,6 +4,7 @@ import entity.NPC_Billson;
 import entity.NPC_Bradney;
 import entity.NPC_Guardarin;
 import entity.NPC_Rosa.*;
+import entity.NPC_Tarta;
 import monster.*;
 import object.*;
 import tile_interactive.IT_BreakableRock;
@@ -139,7 +140,7 @@ public class AssetSetter {
         gp.npc[mapNum][i].worldY = gp.tileSize*16;
         mapNum = 6;
         i = 0;
-        gp.npc[mapNum][i] = new NPC_Rosa_5(gp);
+        gp.npc[mapNum][i] = new NPC_Tarta(gp);
         gp.npc[mapNum][i].worldX = gp.tileSize*24;
         gp.npc[mapNum][i].worldY = gp.tileSize*28;
     }

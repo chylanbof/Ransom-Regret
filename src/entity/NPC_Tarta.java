@@ -1,15 +1,14 @@
-package entity.NPC_Rosa;
+package entity;
 
-import entity.Entity;
 import main.GamePanel;
 
 import java.awt.*;
 
-public class NPC_Rosa_5 extends Entity {
+public class NPC_Tarta extends Entity {
     // Final triste del juego
 
 
-    public NPC_Rosa_5(GamePanel gp) {
+    public NPC_Tarta(GamePanel gp) {
 
         super(gp);
 
@@ -46,13 +45,7 @@ public class NPC_Rosa_5 extends Entity {
 
     public void setDialogue(String characterType) {
 
-        dialogues[0][0] = "Desafortunadamente El Creador De Este Juego No Tuvo Tiempo A Terminar El\nJuego.";
-        dialogues[0][1] = "Originalmente El Plan Era Meter Un Jefe Final Chulisimo Y Una Cinematica\nGuapisima.";
-        dialogues[0][2] = "Hasta Iba A Meter Una Discoteca.";
-        dialogues[0][3] = "Sin Embargo, Este Mensaje Esta Siendo Escrito A Las 5 De La Madrugada Y\nRealisticamente Ya No Hay Tiempo.";
-        dialogues[0][4] = "Disfruta De Este Final Soso.";
-        dialogues[0][5] = "Quizas En Un Futuro Este Juego Se Expanda Pero Ya Es Suficiente.";
-        dialogues[0][6] = "Buenas Noches";
+        dialogues[0][0] = "Felicidades Shinji.";
 
     }
 
