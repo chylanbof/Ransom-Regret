@@ -155,7 +155,7 @@ public class AssetSetter {
         gp.monster[mapNum][i].worldX = gp.tileSize*47;
         gp.monster[mapNum][i].worldY = gp.tileSize*48;
         i++;
-        gp.monster[mapNum][i] = new MON_Vigilux(gp);
+        gp.monster[mapNum][i] = new MON_Xlime(gp);
         gp.monster[mapNum][i].worldX = gp.tileSize*28;
         gp.monster[mapNum][i].worldY = gp.tileSize*30;
         i++;

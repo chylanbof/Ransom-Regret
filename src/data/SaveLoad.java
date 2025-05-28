@@ -138,7 +138,7 @@ public class SaveLoad {
                                 obj.worldY = ds.mapObjectWorldY[mapNum][i];
 
                                 if (ds.mapObjectLootNames != null && ds.mapObjectLootNames[mapNum][i] != null) {
-                                    obj.loot = gp.eGenerator.getObject(ds.mapObjectLootNames[mapNum][i]);
+                                    obj.setLoot(gp.eGenerator.getObject(ds.mapObjectLootNames[mapNum][i]));
                                 }
 
                                 obj.opened = ds.mapObjectOpened[mapNum][i];
