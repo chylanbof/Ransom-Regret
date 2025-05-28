@@ -93,18 +93,24 @@ public class AssetSetter {
         gp.obj[mapNum][i].worldX = gp.tileSize*21;
         gp.obj[mapNum][i].worldY = gp.tileSize*22;
         mapNum = 6;
-        gp.obj[mapNum][i] = new OBJ_Locker_2(gp);
-        gp.obj[mapNum][i].worldX = gp.tileSize*24;
-        gp.obj[mapNum][i].worldY = gp.tileSize*40;
-        i++;
         gp.obj[mapNum][i] = new OBJ_Locker(gp);
         gp.obj[mapNum][i].worldX = gp.tileSize*24;
         gp.obj[mapNum][i].worldY = gp.tileSize*28;
         i++;
+        gp.obj[mapNum][15] = new OBJ_Locker_2(gp);
+        gp.obj[mapNum][15].worldX = gp.tileSize*24;
+        gp.obj[mapNum][15].worldY = gp.tileSize*40;
+        i++;
+    }
+    public void respawnLocker2() {
+        // Busca una posición vacía
 
-
+        gp.obj[6][15] = new OBJ_Locker_2(gp);
+        gp.obj[6][15].worldX = gp.tileSize * 24;
+        gp.obj[6][15].worldY = gp.tileSize * 40;
 
     }
+
     public void setNPC() {
         int mapNum = 0;
         int i = 0;

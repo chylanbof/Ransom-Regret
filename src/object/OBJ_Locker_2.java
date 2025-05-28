@@ -8,6 +8,8 @@ import java.io.IOException;
 
 public class OBJ_Locker_2 extends Entity {
 
+    // cerradura de vigilux
+
     GamePanel gp;
     public static final String objName = "Cerradura2";
 

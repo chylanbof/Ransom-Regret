@@ -41,6 +41,12 @@ public class NPC_Bradney_2 extends Entity {
 
         down1 = setup("/npc/Bradney/Bradney_Down_1",gp.tileSize,gp.tileSize);
         down2 = setup("/npc/Bradney/Bradney_Down_1",gp.tileSize,gp.tileSize);
+        right1 = setup("/npc/Bradney/Bradney_Right_1",gp.tileSize,gp.tileSize);
+        right2 = setup("/npc/Bradney/Bradney_Right_1",gp.tileSize,gp.tileSize);
+        left1 = setup("/npc/Bradney/Bradney_Left_1",gp.tileSize,gp.tileSize);
+        left2 = setup("/npc/Bradney/Bradney_Left_1",gp.tileSize,gp.tileSize);
+        up1 = setup("/npc/Bradney/Bradney_Up_1",gp.tileSize,gp.tileSize);
+        up2 = setup("/npc/Bradney/Bradney_Up_1",gp.tileSize,gp.tileSize);
     }
 
     public void setDialogue(String characterType) {
@@ -54,7 +60,12 @@ public class NPC_Bradney_2 extends Entity {
         }
         dialogues[0][1] = "¿Pero sabes que viene luego del tutorial?";
         dialogues[0][2] = "Una buena patada en el culo.";
-        dialogues[0][3] = "Si estas preparado, abre la cerradura con esta cosa que te voy a dar.";
+        if(characterType.equals("chico")) {
+            dialogues[0][3] = "Si estas preparado, abre la cerradura con esta cosa que te voy a dar.";
+        }
+        else if(characterType.equals("chica")) {
+            dialogues[0][3] = "Si estas preparada, abre la cerradura con esta cosa que te voy a dar.";
+        }
         dialogues[0][4] = "*Has recibido un clip.";
         inventory.add(new OBJ_Clip(gp));
 

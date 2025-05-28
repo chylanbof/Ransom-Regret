@@ -114,8 +114,8 @@ public class Player extends Entity {
         maxMana = 4;
         mana = maxMana;
         ammo = 10;
-        strenght = 6;
-        dexterity = 1;
+        strenght = 14;
+        dexterity = 10;
         exp = 0;
         nextLevelExp = 5;
         coin = 20;
@@ -555,32 +555,38 @@ public class Player extends Entity {
 
             gp.playSE(11);
 
-            if(knockBackPower > 0 && !gp.monster[gp.currentMap][i].antiKnockback) {
+            if (knockBackPower > 0 && !gp.monster[gp.currentMap][i].antiKnockback) {
                 setKnockBack(gp.monster[gp.currentMap][i], attacker, knockBackPower);
             }
 
-            if(gp.monster[gp.currentMap][i].offBalance) {
-                attack *=2;
+            if (gp.monster[gp.currentMap][i].offBalance) {
+                attack *= 2;
             }
 
             int damage = attack - gp.monster[gp.currentMap][i].defense;
-            if (damage <0) {
+            if (damage < 0) {
                 damage = 0;
             }
             gp.monster[gp.currentMap][i].life -= damage;
-            gp.ui.addMessage("¡"+ damage + " de daño!");
+            gp.ui.addMessage("¡" + damage + " de daño!");
 
             gp.monster[gp.currentMap][i].invincible = true;
             gp.monster[gp.currentMap][i].damageReaction();
 
-            if(gp.monster[gp.currentMap][i].life <= 0){
-                gp.monster[gp.currentMap][i].dying = true;
-                gp.ui.addMessage("¡Mataste un " + gp.monster[gp.currentMap][i].name + "!");
-                gp.ui.addMessage("+" + gp.monster[gp.currentMap][i].exp + " de EXP");
-                exp += gp.monster[gp.currentMap][i].exp;
+            if (gp.monster[gp.currentMap][i].life <= 0) {
+                Entity m = gp.monster[gp.currentMap][i];
+                m.dying = true;
+
+                if (m.name.equals("Vigilux")) {
+                    System.out.println("¡Vigilux ha muerto!");
+                    gp.stopMusic();
+                }
+
+                gp.ui.addMessage("¡Mataste un " + m.name + "!");
+                gp.ui.addMessage("+" + m.exp + " de EXP");
+                exp += m.exp;
                 checkLevelUp();
             }
-
         }
      }
 }

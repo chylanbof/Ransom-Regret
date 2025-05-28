@@ -20,10 +20,10 @@ public class MON_Vigilux extends Entity {
         defaultSpeed = 1;
         speed = defaultSpeed;
         antiKnockback = true;
-        maxLife = 25;
+        maxLife = 40;
         life = maxLife;
         attack = 8;
-        defense = 2;
+        defense = 3;
         exp = 30;
         knockBackPower = 5;
 
@@ -65,7 +65,18 @@ public class MON_Vigilux extends Entity {
 
     public void setAction() {
 
-        getRandomDirection();
+        actionLockCounter++;
+
+        if (actionLockCounter == 40) {
+            Random random = new Random();
+            int i = random.nextInt(100) + 1; //eligue un numero del 1 al 100
+
+            if (i <= 25) {direction = "up";}
+            if (i > 25 && i <= 50) {direction = "down";}
+            if (i > 50 && i <= 75) {direction = "left";}
+            if (i > 75 && i <= 100) {direction = "right";}
+            actionLockCounter = 0;
+        }
 
         if (!attacking) {
             checkAttackOrNot(10, gp.tileSize * 4, gp.tileSize * 2);
@@ -92,4 +103,5 @@ public class MON_Vigilux extends Entity {
             gp.playSE(10);
         }
     }
+
 }

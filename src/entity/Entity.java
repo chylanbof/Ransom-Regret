@@ -53,9 +53,9 @@ public class Entity {
     public int shotAvailableCounter = 0;
     int dyingCounter = 0;
     int hpBarCounter = 0;
-    int knockBackCounter = 0;
+    public int knockBackCounter = 0;
     public int guardCounter = 0;
-    int offBalanceCounter = 0;
+    public int offBalanceCounter = 0;
 
     // ATRIBUTOS DEL PERSONAJE
     public String name;
@@ -500,7 +500,7 @@ public class Entity {
             if(gp.player.guarding && gp.player.direction.equals(canGuardDirection)) {
 
                 //Parry
-                if (gp.player.guardCounter < 10) {
+                if (gp.player.guardCounter < 5) {
                     damage = 0;
                     gp.playSE(40);
                     setKnockBack(this, gp.player, knockBackPower);

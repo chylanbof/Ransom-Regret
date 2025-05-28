@@ -148,6 +148,8 @@ public class GamePanel extends JPanel implements Runnable {
             aSetter.setObject(player.characterType);
             aSetter.setInteractiveTile();
         }
+
+        aSetter.respawnLocker2();
     }
     public void setFullScreen() {
         // GET LOCAL SCREEN DEVICE

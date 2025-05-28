@@ -147,12 +147,14 @@ public class SaveLoad {
                                 }
 
                                 gp.obj[mapNum][i] = obj;
+
                             } else {
                                 gp.obj[mapNum][i] = null;
                             }
                         }
                     }
                 }
+                gp.aSetter.respawnLocker2();
 
             } catch (Exception e) {
                 System.out.println("Load exception");
