@@ -1,11 +1,15 @@
 package entity;
 
 import main.GamePanel;
+import object.OBJ_Clip;
 
 import java.awt.*;
 import java.util.Random;
 
 public class NPC_Bradney_2 extends Entity {
+
+    private boolean hasGivenItem = false;
+
 
     public NPC_Bradney_2(GamePanel gp) {
 
@@ -29,6 +33,8 @@ public class NPC_Bradney_2 extends Entity {
 
         dialogueSet = -1;
 
+
+
     }
 
     public void getImage() {
@@ -49,18 +55,32 @@ public class NPC_Bradney_2 extends Entity {
         dialogues[0][1] = "¿Pero sabes que viene luego del tutorial?";
         dialogues[0][2] = "Una buena patada en el culo.";
         dialogues[0][3] = "Si estas preparado, abre la cerradura con esta cosa que te voy a dar.";
-        dialogues[0][4] = "*Has recibido un clip";
+        dialogues[0][4] = "*Has recibido un clip.";
+        inventory.add(new OBJ_Clip(gp));
+
+        dialogues[1][0] = "Solo te advierto que yo te hubiese matado de una manera mas gentil.";
 
 
     }
-
-    public void speak(){
+    public void speak() {
         facePlayer();
-        setDialogue(gp.player.characterType);
-        startDialogue(this,dialogueSet);
+
+        if (!hasGivenItem) {
+            setDialogue(gp.player.characterType);
+            gp.player.inventory.add(new OBJ_Clip(gp)); // Lo recibe el jugador
+            hasGivenItem = true;
+        } else {
+            // Solo setear los diálogos normales después de recibir el clip
+            dialogues[1][0] = "Solo te advierto que yo te hubiese matado de una manera más gentil.";
+            dialogueSet = 1;
+        }
+
+        startDialogue(this, dialogueSet);
 
         dialogueSet++;
-
-
+        if (dialogues[dialogueSet][0] == null) {
+            dialogueSet = 1;
+        }
     }
+
 }

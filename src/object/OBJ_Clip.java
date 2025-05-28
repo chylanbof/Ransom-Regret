@@ -33,15 +33,26 @@ public class OBJ_Clip extends Entity {
         gp.gameState = gp.dialogueState;
 
         int objIndex = getDetected(entity, gp.obj, "Cerradura");
+        int objIndex2 = getDetected(entity, gp.obj, "Cerradura2");
 
         if (objIndex != 999) {
             startDialogue(this, 0);
             gp.playSE(34);
             gp.obj[gp.currentMap][objIndex] = null;
             return true;
+
+        } else if (objIndex2 != 999) {
+            startDialogue(this, 0);
+            gp.stopMusic();
+            gp.playMusic(49);
+            System.out.println("Cerradura2 usada. Reproduciendo música 49.");
+            gp.obj[gp.currentMap][objIndex2] = null; // ← corregido aquí
+            return true;
+
         } else {
             startDialogue(this, 1);
             return false;
         }
     }
+
 }

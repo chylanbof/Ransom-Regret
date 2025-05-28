@@ -93,9 +93,13 @@ public class AssetSetter {
         gp.obj[mapNum][i].worldX = gp.tileSize*21;
         gp.obj[mapNum][i].worldY = gp.tileSize*22;
         mapNum = 6;
-        gp.obj[mapNum][i] = new OBJ_Locker(gp);
+        gp.obj[mapNum][i] = new OBJ_Locker_2(gp);
         gp.obj[mapNum][i].worldX = gp.tileSize*24;
         gp.obj[mapNum][i].worldY = gp.tileSize*40;
+        i++;
+        gp.obj[mapNum][i] = new OBJ_Locker(gp);
+        gp.obj[mapNum][i].worldX = gp.tileSize*24;
+        gp.obj[mapNum][i].worldY = gp.tileSize*28;
         i++;
 
 
@@ -143,10 +147,6 @@ public class AssetSetter {
         gp.npc[mapNum][i].worldY = gp.tileSize*16;
         mapNum = 6;
         i = 0;
-        gp.npc[mapNum][i] = new NPC_Tarta(gp);
-        gp.npc[mapNum][i].worldX = gp.tileSize*24;
-        gp.npc[mapNum][i].worldY = gp.tileSize*28;
-        i++;
         gp.npc[mapNum][i] = new NPC_Bradney_2(gp);
         gp.npc[mapNum][i].worldX = gp.tileSize*23;
         gp.npc[mapNum][i].worldY = gp.tileSize*40;
