@@ -555,7 +555,7 @@ public class Player extends Entity {
 
             gp.playSE(11);
 
-            if(knockBackPower > 0) {
+            if(knockBackPower > 0 && !gp.monster[gp.currentMap][i].antiKnockback) {
                 setKnockBack(gp.monster[gp.currentMap][i], attacker, knockBackPower);
             }
 

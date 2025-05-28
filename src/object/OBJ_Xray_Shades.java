@@ -16,7 +16,7 @@ public class OBJ_Xray_Shades extends Entity {
         name = objName;
         down1 = setup("/objects/X-Ray_Glasses", gp.tileSize, gp.tileSize);
         description = "[Gafas de rayos X]\nUnas gafas muy utiles para ver en\nla oscuridad.\nTu personaje no es muy listo y no\npuede usarlas y atacar al mismo\ntiempo(Pero si disparar).";
-        price = 30;
+        price = 7;
         sellPrice = 15;
         lightRadius = 250;
     }

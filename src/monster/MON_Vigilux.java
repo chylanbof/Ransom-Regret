@@ -71,15 +71,7 @@ public class MON_Vigilux extends Entity {
             checkAttackOrNot(10, gp.tileSize * 4, gp.tileSize * 2);
         }
     }
-    public void damageReaction(){
 
-        actionLockCounter = 0;
-
-        if (gp.player != null) {
-            direction = gp.player.direction;
-        }
-
-    }
     public void checkDrop(){
 
         //ELEGIR UN NUMERO DEL 1 AL 100
