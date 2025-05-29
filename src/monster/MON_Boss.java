@@ -24,7 +24,7 @@ public class MON_Boss extends Entity {
         maxLife = 100;
         life = maxLife;
         attack = 12;
-        defense = 3;
+        defense = 4;
         exp = 50;
         knockBackPower = 5;
 

@@ -351,7 +351,7 @@ public class Entity {
     public void getRandomDirection() {
         actionLockCounter++;
 
-        if (actionLockCounter == 120) {
+        if (actionLockCounter > 120) {
             Random random = new Random();
             int i = random.nextInt(100) + 1; //eligue un numero del 1 al 100
 
@@ -418,6 +418,31 @@ public class Entity {
                 }
             }
             shotAvailableCounter = 0;
+        }
+    }
+    public void moveTowardPlayer(int interval) {
+
+        actionLockCounter++;
+
+        if (actionLockCounter > interval) {
+
+            if(getXdistance(gp.player) > getYdistance(gp.player)) {
+                if(gp.player.getCenterX() < getCenterX()) {
+                    direction = "left";
+                }
+                else {
+                    direction = "right";
+                }
+            }
+            else if(getXdistance(gp.player) < getYdistance(gp.player)) {
+                if(gp.player.getCenterY() < getCenterY()) {
+                    direction = "up";
+                }
+                else {
+                    direction = "down";
+                }
+            }
+            actionLockCounter = 0;
         }
     }
     public String getOppositeDirection(String direction) {
