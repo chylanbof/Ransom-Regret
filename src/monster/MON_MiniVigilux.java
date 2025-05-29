@@ -9,6 +9,7 @@ import java.util.Random;
 public class MON_MiniVigilux extends Entity {
 
     GamePanel gp;
+    public static final String monName = "Vigilux ";
 
     public MON_MiniVigilux(GamePanel gp) {
         super(gp);
@@ -16,7 +17,7 @@ public class MON_MiniVigilux extends Entity {
         this.gp = gp;
 
         type = type_monster;
-        name = "Vigilux";
+        name = monName;
         defaultSpeed = 2;
         speed = defaultSpeed;
         antiKnockback = true;

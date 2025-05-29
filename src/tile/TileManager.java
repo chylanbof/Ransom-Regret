@@ -118,6 +118,7 @@ public class TileManager {
             setup(58, "58", false);
             //paredes falsas
             setup(59, "59", false);
+            setup(60, "56", false);
 
 
     }

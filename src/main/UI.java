@@ -15,8 +15,7 @@ import java.time.Instant;
 import java.util.ArrayList;
 import javax.imageio.ImageIO;
 
-import static java.awt.Color.getColor;
-import static java.awt.Color.white;
+import static java.awt.Color.*;
 
 public class UI {
 
@@ -93,6 +92,7 @@ public class UI {
         //PLAY STATE
         if(gp.gameState == gp.playState) {
             drawPlayerLife();
+            drawMonsterLife();
             drawMessage();
         }
 
@@ -204,6 +204,51 @@ public class UI {
             }
         }
 
+    }
+    public void drawMonsterLife() {
+        for (int i = 0; i < gp.monster[1].length; i++) {
+
+            Entity monster = gp.monster[gp.currentMap][i];
+
+            if(monster != null && monster.inCamera()) {
+                if(monster.hpBarOn && !monster.boss) {
+
+                    double oneScale = (double)gp.tileSize/monster.maxLife;
+                    double hpBarValue = oneScale*monster.life;
+
+                    g2.setColor(new Color(0, 0, 0));
+                    g2.fillRect(monster.getScreenX()-1, monster.getScreenY()-16, gp.tileSize+ 2, 12);
+
+                    g2.setColor(new Color(255, 255, 255));
+                    g2.fillRect(monster.getScreenX(), monster.getScreenY() - 15, (int)hpBarValue, 10);
+
+                    monster.hpBarCounter++;
+
+                    if(monster.hpBarCounter > 300) {
+                        monster.hpBarCounter = 0;
+                        monster.hpBarOn = false;
+                    }
+            }
+                else if(monster.boss) {
+                    double oneScale = (double)gp.tileSize*8/monster.maxLife;
+                    double hpBarValue = oneScale*monster.life;
+
+                    int x = gp.screenWidth/2 - gp.tileSize*4;
+                    int y = gp.tileSize*10;
+
+                    g2.setColor(new Color(35, 35, 35));
+                    g2.fillRect(x-1, y-1, gp.tileSize * 8 + 2, 22);
+
+                    g2.setColor(new Color(255, 0, 30));
+                    g2.fillRect(x, y, (int)hpBarValue, 20);
+
+                    g2.setFont(g2.getFont().deriveFont(Font.BOLD,24f));
+                    g2.setColor(white);
+                    g2.drawString(monster.name, x + 4, y - 10);
+                }
+        }
+
+        }
     }
     public void drawMessage() {
 
@@ -367,7 +412,7 @@ public class UI {
                 } else {
                     charIndex = 0;
                     combinedText = "";
-                    if(gp.gameState == gp.dialogueState) {
+                    if(gp.gameState == gp.dialogueState || gp.gameState == gp.cutsceneState) {
                         npc.dialogueIndex++;
                     }
                 }
@@ -378,6 +423,9 @@ public class UI {
 
             if(gp.gameState == gp.dialogueState) {
                 gp.gameState = gp.playState;
+            }
+            if(gp.gameState == gp.cutsceneState) {
+                gp.csManager.scenePhase++;
             }
         }
         int width = gp.screenWidth - (gp.tileSize*2);
@@ -736,7 +784,7 @@ public class UI {
         y = gp.tileSize*4;
         g2.drawString(text, x, y);
         //MAIN
-        g2.setColor(Color.red);
+        g2.setColor(red);
         g2.drawString(text, x-4, y-4);
 
         //IMAGEN?????

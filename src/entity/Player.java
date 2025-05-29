@@ -94,9 +94,6 @@ public class Player extends Entity {
          gp.currentMap = 0;
          worldX = gp.tileSize * 20;
          worldY = gp.tileSize * 24;
-     gp.currentMap = 6;
-     worldX = gp.tileSize * 21;
-   worldY = gp.tileSize * 43;
 
         //VELOCIDAD
         defaultSpeed = 5;
@@ -114,7 +111,7 @@ public class Player extends Entity {
         maxMana = 4;
         mana = maxMana;
         ammo = 10;
-        strenght = 10;
+        strenght = 1;
         dexterity = 0;
         exp = 0;
         nextLevelExp = 5;
@@ -584,6 +581,11 @@ public class Player extends Entity {
                     System.out.println("¡Vigilux ha muerto!");
                     gp.stopMusic();
                 }
+                if (m.name.equals("Jefe")) {
+                    System.out.println("¡El jefe ha muerto!");
+                    gp.stopMusic();
+                }
+
 
                 gp.ui.addMessage("¡Mataste un " + m.name + "!");
                 gp.ui.addMessage("+" + m.exp + " de EXP");
@@ -801,8 +803,11 @@ public class Player extends Entity {
         if(transparent) {
            g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.4f));
         }
+        if(drawing) {
+            g2.drawImage(image, tempScreenX, tempScreenY, null);
+        }
 
-        g2.drawImage(image, tempScreenX, tempScreenY, null);
+
 
         g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1f));
 

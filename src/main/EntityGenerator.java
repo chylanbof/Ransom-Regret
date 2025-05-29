@@ -25,12 +25,14 @@ public class EntityGenerator {
             case OBJ_Door.objName: obj = new OBJ_Door(gp); break;
             case OBJ_Fart.objName: obj = new OBJ_Fart(gp); break;
             case OBJ_Fireball.objName: obj = new OBJ_Fireball(gp); break;
+            case OBJ_Gusanin.objName: obj = new OBJ_Gusanin(gp); break;
             case OBJ_Heart.objName: obj = new OBJ_Heart(gp); break;
             case OBJ_Key.objName: obj = new OBJ_Key(gp); break;
             case OBJ_Locker.objName: obj = new OBJ_Locker(gp); break;
             case OBJ_ManaCrystal.objName: obj = new OBJ_ManaCrystal(gp); break;
             case OBJ_Nickel.objName: obj = new OBJ_Nickel(gp); break;
             case OBJ_Noob_Magic.objName: obj = new OBJ_Noob_Magic(gp); break;
+            case OBJ_Nota.objName: obj = new OBJ_Nota(gp); break;
             case OBJ_Penny.objName: obj = new OBJ_Penny(gp); break;
             case OBJ_Rock.objName: obj = new OBJ_Rock(gp); break;
             case OBJ_Shield.objName: obj = new OBJ_Shield(gp); break;

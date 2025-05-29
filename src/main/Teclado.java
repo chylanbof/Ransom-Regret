@@ -99,7 +99,7 @@ public class Teclado implements KeyListener {
         else if (gp.gameState == gp.pauseState) {pauseState(code);}
 
         //DIALOGUE STATE
-        else if (gp.gameState == gp.dialogueState) {dialogueState(code);}
+        else if (gp.gameState == gp.dialogueState || gp.gameState == gp.cutsceneState) {dialogueState(code);}
 
         //CHARACTER STATE
         else if (gp.gameState == gp.characterState) {characterState(code);}

@@ -107,7 +107,8 @@ public class EventHandler {
                     previousEventY = gp.player.worldY;
                 }
             }
-            else if(hit(6, 29, 26, "any")) {teleport(6,26,13, gp.dungeon); gp.stopMusic(); gp.playMusic(50);}
+            else if(hit(6, 29, 26, "any")) {teleport(6,26,13, gp.dungeon); gp.stopMusic();}
+            else if(hit(6, 26, 11, "any")) {jefe1();} //jefe
 
         }
 
@@ -240,5 +241,12 @@ public class EventHandler {
             }
         }
         return false; // No está en el mapa
+    }
+    public void jefe1() {
+
+        if(!gp.bossBattleOn) {
+            gp.gameState = gp.cutsceneState;
+            gp.csManager.sceneNum = gp.csManager.jefe1;
+        }
     }
 }

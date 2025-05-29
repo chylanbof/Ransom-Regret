@@ -87,6 +87,8 @@ public class Sound {
         soundURL[49] = getClass().getResource("/sound/roll_the_dice.wav");
         //Jefe
         soundURL[50] = getClass().getResource("/sound/guns_blazing.wav");
+        soundURL[51] = getClass().getResource("/sound/scream.wav");
+        soundURL[52] = getClass().getResource("/sound/Boss.wav");
     }
 
     public void setFile(int i) {

@@ -100,7 +100,9 @@ public class AssetSetter {
         gp.obj[mapNum][15] = new OBJ_Locker_2(gp);
         gp.obj[mapNum][15].worldX = gp.tileSize*24;
         gp.obj[mapNum][15].worldY = gp.tileSize*40;
-        i++;
+        gp.obj[mapNum][16] = new OBJ_Gusanin(gp);
+        gp.obj[mapNum][16].worldX = gp.tileSize*3;
+        gp.obj[mapNum][16].worldY = gp.tileSize*1;
     }
     public void respawnLocker2() {
         // Busca una posición vacía
@@ -160,6 +162,15 @@ public class AssetSetter {
         gp.npc[mapNum][i] = new NPC_Bradney_3(gp);
         gp.npc[mapNum][i].worldX = gp.tileSize*24;
         gp.npc[mapNum][i].worldY = gp.tileSize*26;
+        i++;
+        gp.npc[mapNum][i] = new NPC_Tarta(gp);
+        gp.npc[mapNum][i].worldX = gp.tileSize*3;
+        gp.npc[mapNum][i].worldY = gp.tileSize*0;
+        i++;
+        gp.npc[mapNum][i] = new NPC_Guardarin(gp);
+        gp.npc[mapNum][i].worldX = gp.tileSize*29;
+        gp.npc[mapNum][i].worldY = gp.tileSize*41;
+
 
 
     }
@@ -338,16 +349,16 @@ public class AssetSetter {
         gp.monster[mapNum][i].worldY = gp.tileSize*31;
         i++;
         gp.monster[mapNum][i] = new MON_Boss(gp);
-        gp.monster[mapNum][i].worldX = gp.tileSize*26;
-        gp.monster[mapNum][i].worldY = gp.tileSize*5;
+        gp.monster[mapNum][i].worldX = gp.tileSize*24;
+        gp.monster[mapNum][i].worldY = gp.tileSize*3;
         i++;
         gp.monster[mapNum][i] = new MON_MiniVigilux(gp);
-        gp.monster[mapNum][i].worldX = gp.tileSize*22;
-        gp.monster[mapNum][i].worldY = gp.tileSize*7;
+        gp.monster[mapNum][i].worldX = gp.tileSize*16;
+        gp.monster[mapNum][i].worldY = gp.tileSize*4;
         i++;
         gp.monster[mapNum][i] = new MON_MiniVigilux(gp);
-        gp.monster[mapNum][i].worldX = gp.tileSize*32;
-        gp.monster[mapNum][i].worldY = gp.tileSize*7;
+        gp.monster[mapNum][i].worldX = gp.tileSize*35;
+        gp.monster[mapNum][i].worldY = gp.tileSize*2;
 
     }
     public void setInteractiveTile() {
