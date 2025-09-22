@@ -18,7 +18,7 @@ public class Sound {
         //titulo
         soundURL[6] = getClass().getResource("/sound/titleScreen.wav");
         //musica de basement1
-        soundURL[0] = getClass().getResource("/sound/main1.wav");
+        soundURL[0] = getClass().getResource("/sound/SWORD.wav");
         soundURL[1] = getClass().getResource("/sound/doorOpen.wav");
         soundURL[2] = getClass().getResource("/sound/fart.wav");
         soundURL[3] = getClass().getResource("/sound/KeyPickup.wav");
@@ -80,13 +80,13 @@ public class Sound {
         soundURL[44] = getClass().getResource("/sound/Bradney_voice.wav");
         soundURL[46] = getClass().getResource("/sound/default_sfx.wav");
         // Matadero
-        soundURL[47] = getClass().getResource("/sound/AnotherMedium.wav");
+        soundURL[47] = getClass().getResource("/sound/tvworld.wav");
         //Creditos
         soundURL[48] = getClass().getResource("/sound/creditos.wav");
         //Vigilux
         soundURL[49] = getClass().getResource("/sound/roll_the_dice.wav");
         //Jefe
-        soundURL[50] = getClass().getResource("/sound/guns_blazing.wav");
+        soundURL[50] = getClass().getResource("/sound/itstvtime.wav");
         soundURL[51] = getClass().getResource("/sound/scream.wav");
         soundURL[52] = getClass().getResource("/sound/Boss.wav");
     }
